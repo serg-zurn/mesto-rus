@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место - Россия</title>
+    <link rel="stylesheet" href="pages/index.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <img src="images/header-logo.svg" alt="Логотип" class="header__logo">
+        </header>
+        <main>
+            <section class="profile">
+                <div class="profile__container">
+                    <img src="images/profile-avatar.jpg" alt="Фото" class="profile__avatar">
+                    <div class="profile__info">
+                        <div class="profile__info-container">
+                            <h1 class="profile__info-name">Жак-Ив Кусто</h1>
+                            <button class="profile__edit-button" type="button"></button>
+                        </div>
+                        <p class="profile__info-status">Исследователь океана</p>
+                    </div>
+                </div>
+                <button class="profile__add-button" type="button"></button>
+            </section>
+            <section class="elements">
+                <div class="elements__item">
+                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
+                    <div class="elements__line">
+                        <h2 class="elements__text">Карачаево</h2>
+                        <button type="button" class="elements__like elements__like_active"></button> <!--elements__like_active-->
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
+                    <div class="elements__line">
+                        <h2 class="elements__text">Карачаево</h2>
+                        <button type="button" class="elements__like"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
+                    <div class="elements__line">
+                        <h2 class="elements__text">Карачаево</h2>
+                        <button type="button" class="elements__like"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
+                    <div class="elements__line">
+                        <h2 class="elements__text">Карачаево</h2>
+                        <button type="button" class="elements__like"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
+                    <div class="elements__line">
+                        <h2 class="elements__text">Карачаево</h2>
+                        <button type="button" class="elements__like"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
+                    <div class="elements__line">
+                        <h2 class="elements__text">Карачаево-Чeркесск</h2>
+                        <button type="button" class="elements__like"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__text">© 2022 Mesto Russia</p>
+        </footer>
+        <div class="popup"> <!-- popup_opened-->
+            <div class="popup__container">
+                <p class="popup__text">Редактировать профиль</p>
+                <form class="popup__form" id="form" name="popup">
+                    <input type="text" name="name" required class="popup__input popup__input_type_name" id="name">
+                    <input type="text" name="status" required class="popup__input popup__input_type_status" id="status">
+                    <button type="submit" class="popup__save-button">Сохранить</button>
+                </form>
+                <button class="popup__close-button" type="button"></button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
