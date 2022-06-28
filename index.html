@@ -27,48 +27,18 @@
                 <button class="profile__add-button" type="button"></button>
             </section>
             <section class="elements">
-                <div class="elements__item">
-                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
-                    <div class="elements__line">
-                        <h2 class="elements__text">Карачаево</h2>
-                        <button type="button" class="elements__like elements__like_active"></button> <!--elements__like_active-->
+                <template class="template__item">
+                    <div class="elements__item">
+                        <div class="elements__image-container">
+                            <img alt="Фотография" class="elements__image">
+                        </div>   
+                        <div class="elements__line">
+                            <h2 class="elements__text"></h2>
+                            <button type="button" class="elements__like"></button>
+                        </div>
+                        <button type="button" class="elements__trash"></button>
                     </div>
-                </div>
-                <div class="elements__item">
-                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
-                    <div class="elements__line">
-                        <h2 class="elements__text">Карачаево</h2>
-                        <button type="button" class="elements__like"></button>
-                    </div>
-                </div>
-                <div class="elements__item">
-                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
-                    <div class="elements__line">
-                        <h2 class="elements__text">Карачаево</h2>
-                        <button type="button" class="elements__like"></button>
-                    </div>
-                </div>
-                <div class="elements__item">
-                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
-                    <div class="elements__line">
-                        <h2 class="elements__text">Карачаево</h2>
-                        <button type="button" class="elements__like"></button>
-                    </div>
-                </div>
-                <div class="elements__item">
-                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
-                    <div class="elements__line">
-                        <h2 class="elements__text">Карачаево</h2>
-                        <button type="button" class="elements__like"></button>
-                    </div>
-                </div>
-                <div class="elements__item">
-                    <img src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Фотография" class="elements__image">
-                    <div class="elements__line">
-                        <h2 class="elements__text">Карачаево-Чeркесск</h2>
-                        <button type="button" class="elements__like"></button>
-                    </div>
-                </div>
+                </template>
             </section>
         </main>
         <footer class="footer">
@@ -83,6 +53,24 @@
                     <button type="submit" class="popup__save-button">Сохранить</button>
                 </form>
                 <button class="popup__close-button" type="button"></button>
+            </div>
+        </div>
+        <div class="new-place-popup"> <!-- popup_opened-->
+            <div class="new-place-popup__container">
+                <h3 class="new-place-popup__text">Новое место</h3>
+                <form class="new-place-popup__form" id="form" name="new-place-popup">
+                    <input type="text" name="place-name" required class="new-place-popup__input new-place-popup__input_type_name" id="place-name" placeholder="Название">
+                    <input type="text" name="place-link" required class="new-place-popup__input new-place-popup__input_type_link" id="place-link" placeholder="Ссылка на картинку">
+                    <button type="submit" class="new-place-popup__save-button">Сохранить</button>
+                </form>
+                <button class="new-place-popup__close-button" type="button"></button>
+            </div>
+        </div>
+        <div class="image-popup"> <!-- popup_opened-->
+            <div class="image-popup__container">
+                <img alt="Фотография" class="image-popup__photo">
+                <button class="image-popup__close-button" type="button"></button>
+                <p class="image-popup__text"></p>
             </div>
         </div>
     </div>
