@@ -19,12 +19,12 @@
                     <div class="profile__info">
                         <div class="profile__info-container">
                             <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-                            <button class="profile__edit-button" type="button"></button>
+                            <button class="profile__edit-button" type="button" aria-label="Edit your profile"></button>
                         </div>
                         <p class="profile__info-status">Исследователь океана</p>
                     </div>
                 </div>
-                <button class="profile__add-button" type="button"></button>
+                <button class="profile__add-button" type="button" aria-label="Add new card"></button>
             </section>
             <section class="elements">
                 <template class="template__item">
@@ -34,9 +34,9 @@
                         </div>   
                         <div class="elements__line">
                             <h2 class="elements__text"></h2>
-                            <button type="button" class="elements__like"></button>
+                            <button type="button" class="elements__like" aria-label="Like a card"></button>
                         </div>
-                        <button type="button" class="elements__trash"></button>
+                        <button type="button" class="elements__trash" aria-label="Delete card"></button>
                     </div>
                 </template>
             </section>
@@ -50,9 +50,9 @@
                 <form class="popup__form" id="form-edit" name="popup">
                     <input type="text" name="name" required class="popup__input popup__input_type_name" id="name">
                     <input type="text" name="status" required class="popup__input popup__input_type_status" id="status">
-                    <button type="submit" class="popup__save-button">Сохранить</button>
+                    <button type="submit" class="popup__save-button" aria-label="Save changes">Сохранить</button>
                 </form>
-                <button class="popup__close-button" type="button"></button>
+                <button class="popup__close-button" type="button" aria-label="Close profile popup"></button>
             </div>
         </div>
         <div class="new-place-popup"> <!-- popup_opened-->
@@ -60,20 +60,20 @@
                 <h3 class="new-place-popup__text">Новое место</h3>
                 <form class="new-place-popup__form" id="form-place" name="new-place-popup">
                     <input type="text" name="place-name" required class="new-place-popup__input new-place-popup__input_type_name" id="place-name" placeholder="Название">
-                    <input type="text" name="place-link" required class="new-place-popup__input new-place-popup__input_type_link" id="place-link" placeholder="Ссылка на картинку">
-                    <button type="submit" class="new-place-popup__save-button">Сохранить</button>
+                    <input type="url" name="place-link" required class="new-place-popup__input new-place-popup__input_type_link" id="place-link" placeholder="Ссылка на картинку">
+                    <button type="submit" class="new-place-popup__save-button" aria-label="Save new place">Сохранить</button>
                 </form>
-                <button class="new-place-popup__close-button" type="button"></button>
+                <button class="new-place-popup__close-button" type="button" aria-label="Close new place popup"></button>
             </div>
         </div>
         <div class="image-popup"> <!-- popup_opened-->
             <div class="image-popup__container">
                 <img alt="Фотография" class="image-popup__photo">
-                <button class="image-popup__close-button" type="button"></button>
+                <button class="image-popup__close-button" type="button" aria-label="Show photo"></button>
                 <p class="image-popup__text"></p>
             </div>
         </div>
     </div>
-    <script src="scripts/script.js"></script>
+    <script defer src="scripts/script.js"></script>
 </body>
 </html>
