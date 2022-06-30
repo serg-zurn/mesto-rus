@@ -24,30 +24,28 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
-const profilePopupCloseButton = document.querySelector('.popup__close-button');
-const profilePopup = document.querySelector('.popup');
-const profilePopupFormElement = document.querySelector('.popup__form');
-const profilePopupNameInput = profilePopupFormElement.querySelector('.popup__input_type_name');
-const profilePopupJobInput = profilePopupFormElement.querySelector('.popup__input_type_status');
+const profilePopupCloseButton = document.getElementById('edit-popup-close-button');
+const profilePopup = document.getElementById('edit-popup');
+const profilePopupFormElement = document.getElementById('edit-form');
+const profilePopupNameInput = document.getElementById('edit-name');
+const profilePopupJobInput = document.getElementById('edit-status');
 const profileInfo = document.querySelector('.profile__info');
 const profileName = profileInfo.querySelector('.profile__info-name');
 const profileStatus = profileInfo.querySelector('.profile__info-status');
 const profileEditButton = document.querySelector('.profile__edit-button');
 const elements = document.querySelector('.elements');
 const elementTemplate = document.querySelector('.template__item').content;
-const newPlacePopup = document.querySelector('.new-place-popup');
-const newPlacePopupFormElement = document.querySelector('.new-place-popup__form');
-const newPlacePopupNameInput = newPlacePopupFormElement.querySelector('.new-place-popup__input_type_name');
-const newPlacePopupLinkInput = newPlacePopupFormElement.querySelector('.new-place-popup__input_type_link');
+const newPlacePopup = document.getElementById('place-popup');
+const newPlacePopupFormElement = document.getElementById('place-form');
+const newPlacePopupNameInput = document.getElementById('place-name');
+const newPlacePopupLinkInput = document.getElementById('place-link');
 const newPlaceAddButton = document.querySelector('.profile__add-button');
-const newPlacePopupCloseButton = document.querySelector('.new-place-popup__close-button');
+const newPlacePopupCloseButton = document.getElementById('place-popup-close-button');
 const deletePlaceButton = document.querySelector('.elements__trash');
 const elementsItemTemplate = document.querySelector('.elements__item');
-const imagePopup = document.querySelector('.image-popup');
-const imagePopupCloseButton = document.querySelector('.image-popup__close-button');
+const imagePopup = document.getElementById('image-popup');
+const imagePopupCloseButton = document.getElementById('image-popup-close-button');
 const imagePopupImage = document.querySelector('.elements__image');
-const imageName = document.querySelector('.image-popup__name');
-const imageLink = document.querySelector('.image-popup__photo');
 
 // Функция открытия для всех поп-апов
 function openPopup(place){
@@ -58,9 +56,9 @@ function closePopup(place){
   place.classList.remove('popup_opened');
 }
 
-// Общий метод Создать карточку
+// Общий метод - Создание карточки
 function createCard(item) {
-  const elementItem = elementTemplate.cloneNode(true);
+  const elementItem = elementTemplate.querySelector('.elements__item').cloneNode(true);
   elementItem.querySelector('.elements__text').textContent = item.name;
   elementItem.querySelector('.elements__image').src = item.link;
   // Проставление лайков
@@ -69,30 +67,33 @@ function createCard(item) {
   });
   // Удаление
   elementItem.querySelector('.elements__trash').addEventListener('click', function (evt) {
-    evt.target.closest('.elements__item').remove();
+    elementItem.remove();
   });
   // Открытие картинки
   elementItem.querySelector('.elements__image').addEventListener('click', function () {
-    imagePopup.querySelector('.image-popup__text').textContent = item.name;
-    imagePopup.querySelector('.image-popup__photo').src = item.link;
+    imagePopup.querySelector('.popup__image-text').textContent = item.name;
+    imagePopup.querySelector('.popup__image-photo').src = item.link;
     openPopup(imagePopup);
   });
   return elementItem;
 }
 
-// Добавление шести карточек при открытии страницы
-initialCards.forEach(function (item) {
+// Общий метод - Рендеринг карточки
+function addCard(item) {
   const elementItem = createCard(item);
-  elements.append(elementItem);
-});
+  elements.prepend(elementItem);
+}
 
-// Добавление новых карточек
+// Шесть карточек при открытии страницы
+initialCards.reverse().forEach(addCard);
+
+// Новые карточки
 function newPlaceFormSubmitHandler (evt) {
   evt.preventDefault();
   const newCardFormAdd = {name: newPlacePopupNameInput.value, link: newPlacePopupLinkInput.value};
-  const elementItem = createCard(newCardFormAdd);
-  elements.prepend(elementItem);
+  addCard(newCardFormAdd);
   closePopup(newPlacePopup);
+  newPlacePopupFormElement.reset();
 };
 
 // Открытие поп-апа редактирования информации

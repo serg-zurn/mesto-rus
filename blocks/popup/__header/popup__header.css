@@ -1,4 +1,4 @@
-.popup__text {
+.popup__header {
     font-family: 'Inter', "Arial", sans-serif;
     font-weight: 900;
     font-size: 24px;
@@ -8,7 +8,7 @@
 }
 
 @media all and (max-width: 626px) {
-    .popup__text {
+    .popup__header {
         font-size: 18px;
         line-height: 22px;
         margin: 25px auto 68px; 
