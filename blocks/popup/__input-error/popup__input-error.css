@@ -1,0 +1,16 @@
+.popup__input-error {
+    visibility: hidden;
+    color: #FF0000;
+    font-family: 'Inter', "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    align-self: flex-start;
+    max-width: 362px;
+    padding: 0;
+}
+
+@media all and (max-width: 626px) {
+    .popup__input-error {
+        max-width: 242px;
+    }
+}

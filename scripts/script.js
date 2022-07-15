@@ -46,6 +46,7 @@ const elementsItemTemplate = document.querySelector('.elements__item');
 const imagePopup = document.getElementById('image-popup');
 const imagePopupCloseButton = document.getElementById('image-popup-close-button');
 const imagePopupImage = document.querySelector('.elements__image');
+const popup = document.querySelector('.popup');
 
 // Функция открытия для всех поп-апов
 function openPopup(place){
@@ -140,3 +141,31 @@ newPlacePopupCloseButton.addEventListener('click', closeNewPlacePopup);
 
 // Слушатель на закрытие поп-апа расширенного просмотра карточки
 imagePopupCloseButton.addEventListener('click', closeImagePopup);
+
+// Слушатели на закрытие поп-апов по клику по заднему фону
+profilePopup.addEventListener('click', (evt) => {
+  if (evt.target === evt.currentTarget) {
+    closeProfilePopup()}
+});
+newPlacePopup.addEventListener('click', (evt) => {
+  if (evt.target === evt.currentTarget) {
+    closeNewPlacePopup()}
+});
+imagePopup.addEventListener('click', (evt) => {
+  if (evt.target === evt.currentTarget) {
+    closeImagePopup()}
+});
+
+// Слушатели на закрытие поп-апов при нажатии на Esc
+document.addEventListener('keydown', (evt) => {
+  if (evt.keyCode == 27) {
+    closeProfilePopup()}
+});
+document.addEventListener('keydown', (evt) => {
+  if (evt.keyCode == 27) {
+    closeNewPlacePopup()}
+});
+document.addEventListener('keydown', (evt) => {
+  if (evt.keyCode == 27) {
+    closeImagePopup()}
+});
