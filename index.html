@@ -49,9 +49,9 @@
                 <h3 class="popup__header">Редактировать профиль</h3>
                 <form class="popup__form" id="edit-form" name="popup" novalidate>
                     <fieldset class="popup__fieldset">
-                        <input type="text" name="editname" required class="popup__input popup__input_type_name" id="edit-name" minlength="2" maxlength="40"> <!--popup__input_type_error-->
+                        <input type="text" name="editname" required class="popup__input popup__input_type_name" id="edit-name" minlength="2" maxlength="40" placeholder="Имя"> <!--popup__input_type_error-->
                         <div class="popup__error-container"><span class="popup__input-error edit-name-error"></span></div>  <!--popup__input-error_active-->
-                        <input type="text" name="editstatus" required class="popup__input popup__input_type_value" id="edit-status" minlength="2" maxlength="200">
+                        <input type="text" name="editstatus" required class="popup__input popup__input_type_value" id="edit-status" minlength="2" maxlength="200" placeholder="Профессия">
                         <div class="popup__error-container"><span class="popup__input-error edit-status-error"></span></div>
                         <button type="submit" class="popup__save-button" id="edit-save" aria-label="Save changes">Сохранить</button> <!--popup__save-button_interactive-->
                     </fieldset>
@@ -83,6 +83,5 @@
         </div>
     </div>
     <script defer type="module" src="scripts/index.js"></script>
-    <script defer type="module" src="scripts/Card.js"></script>
 </body>
 </html>
