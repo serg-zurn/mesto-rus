@@ -12,9 +12,9 @@ export class UserInfo {
         return this._userData;
     }
 
-    setUserInfo(username, userinfo) {
-        this._name.textContent = username.value;
-        this._info.textContent = userinfo.value;
+    setUserInfo(data) {
+        this._name.textContent = data.editname;
+        this._info.textContent = data.editstatus;
     }
 
 }

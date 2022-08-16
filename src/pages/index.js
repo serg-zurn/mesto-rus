@@ -6,10 +6,10 @@ import { Section } from "../components/Section.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
-import { profilePopup, profilePopupNameInput, profilePopupJobInput, profileEditButton, elements, newPlacePopup, newPlacePopupFormElement, newPlacePopupNameInput, newPlacePopupLinkInput, newPlaceAddButton, imagePopup, profilePopupValidation, newPlcePopupValidation, validationConfig } from "../utils/constants.js"
+import { profilePopup, profilePopupNameInput, profilePopupJobInput, profileEditButton, elements, newPlacePopup, newPlacePopupFormElement, newPlaceAddButton, imagePopup, profilePopupValidation, newPlcePopupValidation, validationConfig } from "../utils/constants.js"
 import { initialCards } from '../utils/constants.js';
 
-
+ 
 const createCard = (data) => {
   const card = new Card({
     data,
@@ -37,8 +37,8 @@ defaultCardList.renderItems(initialCards);
 const popupOpenPicture = new PopupWithImage(imagePopup);
 
 // Создание экземпляра класса формы добавления новых карточек
-const addCardPopup = new PopupWithForm(newPlacePopup, {handleSubmitForm: () => {
-  const newCards = createCard({name: newPlacePopupNameInput.value, link: newPlacePopupLinkInput.value});
+const addCardPopup = new PopupWithForm(newPlacePopup, {handleSubmitForm: (data) => {
+  const newCards = createCard(data);
   elements.prepend(newCards);
   addCardPopup.close();
   newPlacePopupFormElement.reset();
@@ -49,8 +49,8 @@ const addCardPopup = new PopupWithForm(newPlacePopup, {handleSubmitForm: () => {
 const userProfile = new UserInfo ({userProfileName: '.profile__info-name', userProfileStatus: '.profile__info-status'});
 
 // Создание экземпляра класса формы редактирования профиля
-const profileEditPopup = new PopupWithForm(profilePopup, {handleSubmitForm: () => {
-  userProfile.setUserInfo(profilePopupNameInput, profilePopupJobInput);
+const profileEditPopup = new PopupWithForm(profilePopup, {handleSubmitForm: (data) => {
+  userProfile.setUserInfo(data);
   profileEditPopup.close();
   }
 });
